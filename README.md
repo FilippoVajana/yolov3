@@ -16,7 +16,7 @@
   </tr>
 </table>
 
-# Introduction
+# YOLOv3 for ProcessGraph Agent
 
 This directory contains PyTorch YOLOv3 software developed by Ultralytics LLC, and **is freely available for redistribution under the GPL-3.0 license**. For more information please visit https://www.ultralytics.com.
 
@@ -30,14 +30,38 @@ Python 3.7 or later with all `pip install -U -r requirements.txt` packages inclu
 - Nvidia Driver >= 440.44
 - Docker Engine - CE >= 19.03
 
-# Tutorials
+## Installation
 
-* [Train Custom Data](https://github.com/ultralytics/yolov3/wiki/Train-Custom-Data) < highly recommended!!
-* [Train Single Class](https://github.com/ultralytics/yolov3/wiki/Example:-Train-Single-Class)
-* [Google Colab Notebook](https://colab.research.google.com/github/ultralytics/yolov3/blob/master/tutorial.ipynb) with quick training, inference and testing examples
-* [GCP Quickstart](https://github.com/ultralytics/yolov3/wiki/GCP-Quickstart)
-* [Docker Quickstart Guide](https://github.com/ultralytics/yolov3/wiki/Docker-Quickstart) 
-* [A TensorRT Implementation of YOLOv3 and YOLOv4](https://github.com/wang-xinyu/tensorrtx/tree/master/yolov3-spp) 
+1. clone the repository
+
+    ```bash
+    git clone https://github.com/ultralytics/yolov3
+    ```
+
+2. create a brand new Conda environment and install dependencies
+
+    ```bash
+    conda create -yn yolo python=3.8
+    conda activate yolo
+
+    # Windows
+    pwsh conda_install.ps1
+
+    # Linux
+    bash conda_install.sh
+    ```
+
+3. download model weights from [Gdrive](https://drive.google.com/drive/folders/1LezFG5g3BCW6iYaV89B2i64cqEUZD7e0)
+
+## Usage
+
+To perform a simple detection on example images run:
+
+```bash
+python3 detect.py --cfg cfg/yolov3-spp.cfg --weights weights/yolov3-spp-ultralytics.pt
+```
+
+For all the available options see the `detect.py` main entrypoint.
 
 # Training
 
